@@ -1,0 +1,117 @@
+# Practica2
+Los métodos que se pidieron en la practica 2 mas su análisis de algoritmo
+La cantidad promedio mensual de cada cabra
+private float getLechePromedioca() {
+    	float promedio=0;				(1)
+    	for(int i=0;i<limite;i++)			(n)
+    		promedio+=lista[i].getLecheca();	(1)
+    	return promedio/limite;			(1)
+    }
+Complejidad espacial= n+1 
+Complejidad temporal= O(n)
+
+Los códigos de las cabras que han tenido el valor máximo de producción por mes.
+private float getMaxCabra() {
+    	float mcabras=0;					(1)
+    	for(int i=0;i<limite;i++)				(n)
+    		if(lista[i].getLecheca()>mcabras)		(1)
+    			mcabras=lista[i].getLecheca();	(1)
+    	return mcabras;					(1)
+    }
+Complejidad espacial= n+1
+Complejidad temporal= O(n)
+
+La cantidad promedio semanal de cada vaca
+private float getLechePromedio() {
+    	float promedio=0;				(1)
+    	for(int i=0;i<limite;i++)			(n)
+    		promedio+=lista[i].getLecheva();  (1)
+    	return promedio/limite;			(1)
+    }
+Complejidad espacial=n+1 
+Complejidad temporal=O(n)
+
+Los códigos de las vacas que han tenido el valor máximo de producción por semana.
+     private float getMaxVaca() {
+    	float mvacas=0;				(1)
+    	for(int i=0;i<limite;i++)			(n)
+    		if(lista[i].getLecheva()>mvacas)	(1)
+    			mvacas=lista[i].getLecheva(); (1)
+    	return mvacas;					(1)
+    }
+Complejidad espacial= n+1
+Complejidad temporal= O(n)
+
+Elaborar método que reciba un entero y retorne la cantidad de dígitos pares que tiene.  int analizaPares(int a){
+int r=0;				(1)
+        for(int i=0;i<a.length;i++)     (n)
+             r=a%2==0;                      (1)
+    }
+    return r;                                    (1)
+}
+Complejidad espacial= n+1
+Complejidad temporal= O(n)
+
+Elaborar método que reciba una cadena de caracteres e indique si es un palíndromo.  Retornando true si lo es y false si no lo es.
+boolean esPalindromo(String cadena) {
+String invertida = new StringBuilder(cadena).reverse().toString(); (1)
+return invertida.equals(cadena);					         (n)
+	}
+}
+Complejidad espacial= n
+Complejidad temporal= O(n)
+
+Elaborar método que reciba un entero e indique si se trata de un número capicúa.
+Retornando true si lo es y false si no lo es.
+boolean esCapicua(int n) {
+boolean r=true;				(1)
+int aux=n;					(1)
+        while (aux!=0){				(n+1)
+            cifra = aux % 10;			(1)
+            inverso = inverso * 10 + cifra;	(1)
+            aux = aux / 10;			(1)
+        }
+        if(n== inverso){			(1)
+            r=true;				(1)
+        }else{					(1)
+            r=false;				(1)
+        }
+return r;					(1)	
+    }
+
+Complejidad espacial= 1
+Complejidad temporal= O(n)
+
+Elaborar método que reciba un arreglo de flotantes y un flotante X y retorne la cantidad de veces que el flotante X se localiza en el arreglo.
+
+boolean comparaciónArreglo(float [] n, float x) {
+int i;
+int cont = 0;			(1)
+for (i = 0; i < 10; i++) {	(n)
+            if (n[i] == x){ 	(1)	
+                cont++;		(1)
+            } 
+return cont;			(1)
+}
+Complejidad espacial= n+1
+Complejidad temporal= O(n)
+
+Se requiere un método que reciba la colección como un arreglo de colores (pueden estar codificados) y retorne 
+el mismo arreglo, pero con los colores organizados de tal forma que queden los colores organizados de dos en dos 
+teniendo el orden verde, rojo, amarillo, azul y blanco). 
+
+int[] chaquirasColores(int [] c){
+int aux=0;			 (1)	
+for(int j=0;j<c.lenght-1;i+=2){	 (n)
+ for(int i=0;i<c.lenght-1;i+=2){ (n)
+	if(c[i]>c[i+1]){	 (1)
+		aux=c[i];	 (1)
+		c[i]=c[i+2];	 (1)
+		c[i+1]=aux;	 (1)
+
+			}
+		}
+	}
+} 
+Complejidad espacial= n2+2
+Complejidad temporal= O(n2)
